@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV.PATNER.ID - Ekosistem Teknologi Digital & AI</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: #050810;
+      color: #f7f7f7;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(5, 8, 16, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .nav-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: radial-gradient(circle at 30% 0%, #27c3ff, #0047ff);
+    }
+
+    .nav-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .nav-left span {
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      font-size: 0.95rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      opacity: 0.85;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      padding: 4rem 0 3.5rem;
+      background: radial-gradient(circle at top, #1c4bff33, transparent 60%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(39, 195, 255, 0.6);
+      background: rgba(8, 20, 45, 0.9);
+      font-size: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #27c3ff;
+      box-shadow: 0 0 12px #27c3ff;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(120deg, #27c3ff, #7bffea);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      color: #c5c5c5;
+      font-size: 0.98rem;
+      max-width: 32rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #27c3ff, #0047ff);
+      box-shadow: 0 14px 30px rgba(0, 71, 255, 0.35);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(0, 71, 255, 0.45);
+    }
+
+    .btn-ghost {
+      border-color: rgba(255, 255, 255, 0.22);
+      background: rgba(9, 15, 30, 0.85);
+      color: #e2e2e2;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(20, 30, 60, 0.95);
+      transform: translateY(-1px);
+    }
+
+    .hero-meta {
+      font-size: 0.78rem;
+      color: #999;
+    }
+
+    .hero-card {
+      border-radius: 1.5rem;
+      padding: 1.4rem 1.4rem 1.6rem;
+      background: radial-gradient(circle at top, #1f5fff33, #050810);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      font-size: 0.8rem;
+    }
+
+    .pill {
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 0.72rem;
+      color: #cfd9ff;
+    }
+
+    .ecosystem-grid {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .eco-card {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.7rem 0.8rem;
+      border-radius: 1rem;
+      background: rgba(3, 10, 26, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .eco-logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 1rem;
+      overflow: hidden;
+      background: radial-gradient(circle at 30% 0%, #27c3ff, #0047ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+    }
+
+    .eco-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .eco-text h3 {
+      font-size: 0.9rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .eco-text p {
+      font-size: 0.78rem;
+      color: #b9c2ff;
+    }
+
+    .eco-tag {
+      font-size: 0.7rem;
+      margin-left: auto;
+      opacity: 0.8;
+    }
+
+    section {
+      padding: 3.5rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 2.4rem;
+    }
+
+    .section-heading h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-heading p {
+      font-size: 0.9rem;
+      color: #c0c0c0;
+      max-width: 32rem;
+      margin: 0 auto;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 2.2rem;
+      align-items: center;
+    }
+
+    .about-card {
+      background: radial-gradient(circle at top left, #1c4bff25, #050810);
+      border-radius: 1.3rem;
+      padding: 1.5rem 1.6rem;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.92rem;
+      color: #d7d7d7;
+    }
+
+    .about-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .about-list {
+      margin-top: 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    .about-list li {
+      margin-bottom: 0.3rem;
+    }
+
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.3rem;
+    }
+
+    .biz-card {
+      background: rgba(5, 10, 24, 0.95);
+      border-radius: 1.2rem;
+      padding: 1.2rem 1.1rem 1.4rem;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+    }
+
+    .biz-card h3 {
+      font-size: 1rem;
+    }
+
+    .biz-pill {
+      display: inline-block;
+      font-size: 0.75rem;
+      opacity: 0.85;
+      padding: 0.18rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.16);
+    }
+
+    .biz-list {
+      list-style: disc;
+      padding-left: 1.1rem;
+      font-size: 0.86rem;
+      color: #cbd3ff;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 3rem 1rem;
+      border-radius: 1.5rem;
+      background: radial-gradient(circle at top, #1f5fff40, #050810);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    }
+
+    .cta h2 {
+      font-size: 1.7rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .cta p {
+      font-size: 0.95rem;
+      color: #d1d1d1;
+      max-width: 32rem;
+      margin: 0 auto 1.6rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 2rem;
+    }
+
+    .contact-info {
+      font-size: 0.92rem;
+      color: #d3d3d3;
+    }
+
+    .contact-item {
+      margin-bottom: 0.7rem;
+    }
+
+    .contact-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.7;
+    }
+
+    .contact-value {
+      font-size: 0.95rem;
+      margin-top: 0.1rem;
+    }
+
+    .contact-note {
+      font-size: 0.8rem;
+      color: #a8a8a8;
+      margin-top: 0.7rem;
+    }
+
+    form {
+      display: grid;
+      gap: 0.7rem;
+      font-size: 0.9rem;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.6rem 0.8rem;
+      border-radius: 0.7rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(3, 8, 20, 0.95);
+      color: #f7f7f7;
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #27c3ff;
+      box-shadow: 0 0 0 1px rgba(39, 195, 255, 0.35);
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 1.4rem 0 1.6rem;
+      font-size: 0.8rem;
+      text-align: center;
+      color: #9b9b9b;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero {
+        padding-top: 3rem;
+      }
+      .hero-grid {
+        gap: 2rem;
+      }
+      .hero-card {
+        order: -1;
+      }
+      .cards-3 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding-top: 2.6rem;
+      }
+      .cta {
+        padding: 2.4rem 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <div class="container nav">
+      <div class="nav-left">
+        <div class="nav-logo">
+          <!-- Logo CV.PATNER.ID -->
+          <img src="photo_2025-11-22_02-32-18 (2).jpg" alt="Logo CV.PATNER.ID" />
+        </div>
+        <span>CV.PATNER.ID</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#about">Tentang</a>
+        <a href="#ecosystem">Ecosystem</a>
+        <a href="#services">Layanan</a>
+        <a href="#contact">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge">
+          <div class="badge-dot"></div>
+          Ekosistem Teknologi Digital & AI Indonesia
+        </div>
+        <h1>
+          CV.<span>PATNER.ID</span><br />
+          Ekosistem Bisnis Digital, Internet & AI
+        </h1>
+        <p class="hero-subtitle">
+          Perusahaan induk yang menaungi solusi <strong>bisnis digital, marketing multimedia, dan
+          kecerdasan buatan</strong> melalui EXI-PATNER dan ASTROS. Satu pintu untuk transformasi
+          digital dan AI di era baru.
+        </p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn-primary">Hubungi Tim Kami</a>
+          <a href="#ecosystem" class="btn-ghost">Lihat Struktur Ekosistem</a>
+        </div>
+        <p class="hero-meta">
+          Telepon: 0899-5595-302 • WhatsApp: +1 (725) 877-0862
+        </p>
+      </div>
+
+      <aside class="hero-card">
+        <div class="hero-card-header">
+          <span>Struktur Ekosistem</span>
+          <span class="pill">PATNER.ID Group</span>
+        </div>
+        <div class="ecosystem-grid">
+          <div class="eco-card">
+            <div class="eco-logo">
+              <!-- Logo CV.PATNER.ID -->
+              <img src="photo_2025-11-22_02-32-18 (2).jpg" alt="CV.PATNER.ID" />
+            </div>
+            <div class="eco-text">
+              <h3>CV.PATNER.ID</h3>
+              <p>Holding company bisnis digital & aplikasi.</p>
+            </div>
+            <span class="eco-tag">Induk</span>
+          </div>
+
+          <div class="eco-card">
+            <div class="eco-logo">
+              <!-- Logo EXI-PATNER -->
+              <img src="photo_2025-11-22_02-32-18 (3).jpg" alt="EXI-PATNER" />
+            </div>
+            <div class="eco-text">
+              <h3>EXI-PATNER</h3>
+              <p>Marketing multimedia, internet & layanan digital premium.</p>
+            </div>
+            <span class="eco-tag">Brand & Media</span>
+          </div>
+
+          <div class="eco-card">
+            <div class="eco-logo">
+              <!-- Logo ASTROS -->
+              <img src="photo_2025-11-22_02-32-18.jpg" alt="ASTROS" />
+            </div>
+            <div class="eco-text">
+              <h3>ASTROS</h3>
+              <p>Pengembangan AI bisnis dan pendidikan – pintu marketing seluruh AI.</p>
+            </div>
+            <span class="eco-tag">Core AI</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ABOUT PATNER.ID -->
+  <section id="about">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Tentang CV.PATNER.ID</h2>
+        <p>
+          CV.PATNER.ID adalah perusahaan teknologi yang berfokus pada pengembangan bisnis digital,
+          aplikasi, internet, dan kecerdasan buatan melalui unit-unit usaha yang saling terintegrasi.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Visi & Misi</h3>
+          <p>
+            Menjadi ekosistem teknologi digital & AI terdepan yang membantu pelaku usaha, institusi
+            pendidikan, dan masyarakat memasuki era transformasi digital dengan solusi yang
+            <strong>relevan, adaptif, dan berkelanjutan</strong>.
+          </p>
+          <ul class="about-list">
+            <li>Menyediakan solusi digital yang mudah diadopsi oleh berbagai segmen.</li>
+            <li>Mengembangkan produk AI yang praktis untuk bisnis dan pendidikan.</li>
+            <li>Membangun ekosistem kolaborasi dengan mitra di berbagai sektor.</li>
+          </ul>
+        </div>
+
+        <div class="about-card">
+          <h3>Fokus Utama</h3>
+          <p>
+            Kami menggabungkan kekuatan <strong>branding digital</strong>, <strong>platform AI</strong>,
+            dan <strong>layanan internet premium</strong> untuk menciptakan nilai tambah maksimal bagi
+            klien dan mitra bisnis.
+          </p>
+          <ul class="about-list">
+            <li>Bisnis Digital & Aplikasi</li>
+            <li>Marketing Multimedia & Internet Service</li>
+            <li>Artificial Intelligence untuk bisnis & edukasi</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ECOSYSTEM SECTION -->
+  <section id="ecosystem">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Ekosistem Bisnis & Teknologi</h2>
+        <p>
+          Tiga pilar utama yang membentuk fondasi ekosistem CV.PATNER.ID: perusahaan induk, divisi
+          marketing multimedia, dan pusat pengembangan AI.
+        </p>
+      </div>
+
+      <div class="cards-3">
+        <article class="biz-card">
+          <span class="biz-pill">Holding Company</span>
+          <h3>CV.PATNER.ID</h3>
+          <p>
+            Sebagai induk perusahaan, PATNER.ID mengelola arah strategi, standar kualitas, dan
+            pengembangan ekosistem bisnis digital & teknologi yang saling terhubung.
+          </p>
+          <ul class="biz-list">
+            <li>Manajemen ekosistem dan portofolio bisnis.</li>
+            <li>Pengembangan bisnis digital & aplikasi.</li>
+            <li>Kolaborasi strategis dengan mitra dan klien.</li>
+          </ul>
+        </article>
+
+        <article class="biz-card">
+          <span class="biz-pill">Marketing Multimedia</span>
+          <h3>EXI-PATNER</h3>
+          <p>
+            EXI-PATNER adalah divisi yang berfokus pada branding, multimedia, dan layanan internet
+            premium untuk mendukung identitas digital dan promosi bisnis.
+          </p>
+          <ul class="biz-list">
+            <li>Produksi konten multimedia & kreatif.</li>
+            <li>Digital marketing & kampanye internet.</li>
+            <li>Layanan premium berbasis teknologi & AI.</li>
+          </ul>
+        </article>
+
+        <article class="biz-card">
+          <span class="biz-pill">AI Business & Education</span>
+          <h3>ASTROS</h3>
+          <p>
+            ASTROS adalah pusat pengembangan kecerdasan buatan, dengan fokus pada solusi bisnis dan
+            pendidikan yang dapat diimplementasikan secara nyata.
+          </p>
+          <ul class="biz-list">
+            <li>AI untuk automasi dan analitik bisnis.</li>
+            <li>Platform & tools AI untuk pendidikan.</li>
+            <li>Pintu marketing dan integrasi semua produk AI.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES / SOLUSI -->
+  <section id="services">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Solusi yang Kami Tawarkan</h2>
+        <p>
+          Dari branding hingga integrasi AI, kami siap mendampingi transformasi digital bisnis
+          dan institusi Anda.
+        </p>
+      </div>
+
+      <div class="cards-3">
+        <article class="biz-card">
+          <span class="biz-pill">Digital & Internet</span>
+          <h3>Bisnis Digital & Aplikasi</h3>
+          <p>
+            Pengembangan aplikasi, sistem digital, dan platform online yang disesuaikan dengan
+            kebutuhan bisnis Anda.
+          </p>
+          <ul class="biz-list">
+            <li>Aplikasi bisnis & sistem manajemen.</li>
+            <li>Platform membership / e-learning.</li>
+            <li>Integrasi payment & layanan online.</li>
+          </ul>
+        </article>
+
+        <article class="biz-card">
+          <span class="biz-pill">Brand & Multimedia</span>
+          <h3>Marketing & Konten Premium</h3>
+          <p>
+            Layanan multimedia dan digital marketing untuk membangun kehadiran brand Anda di dunia
+            online.
+          </p>
+          <ul class="biz-list">
+            <li>Desain visual, video, dan kampanye digital.</li>
+            <li>Strategi social media & online presence.</li>
+            <li>Branding terpadu dengan dukungan teknologi.</li>
+          </ul>
+        </article>
+
+        <article class="biz-card">
+          <span class="biz-pill">Artificial Intelligence</span>
+          <h3>Solusi AI Bisnis & Pendidikan</h3>
+          <p>
+            Penerapan AI yang praktis untuk meningkatkan efisiensi bisnis sekaligus mendukung
+            pembelajaran yang lebih adaptif.
+          </p>
+          <ul class="biz-list">
+            <li>Chatbot, asisten virtual & automasi proses.</li>
+            <li>AI untuk analitik, rekomendasi, dan personalisasi.</li>
+            <li>AI education tools untuk sekolah, kampus, & komunitas.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="container">
+      <div class="cta">
+        <h2>Siap Berkolaborasi dengan Ekosistem PATNER.ID?</h2>
+        <p>
+          Kami membuka ruang kerja sama dengan pelaku usaha, lembaga pendidikan, komunitas, dan
+          individu yang ingin bertumbuh bersama melalui digitalisasi dan kecerdasan buatan.
+        </p>
+        <a href="#contact" class="btn-primary">Diskusikan Kebutuhan Anda</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Kontak & Kolaborasi</h2>
+        <p>
+          Silakan hubungi kami melalui telepon, WhatsApp, atau kirim pesan melalui formulir di bawah
+          ini.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-label">Telepon</div>
+            <div class="contact-value">0899-5595-302</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">WhatsApp</div>
+            <div class="contact-value">+1 (725) 877-0862</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Perusahaan</div>
+            <div class="contact-value">CV.PATNER.ID – Bisnis Digital & Apps</div>
+          </div>
+          <p class="contact-note">
+            Tim kami akan merespons setiap pesan yang masuk dan membantu Anda merancang solusi yang
+            paling sesuai dengan kebutuhan bisnis atau institusi Anda.
+          </p>
+        </div>
+
+        <div>
+          <!-- Form statis, bisa dihubungkan ke backend / layanan form -->
+          <form>
+            <div>
+              <label for="name">Nama Lengkap</label><br />
+              <input id="name" type="text" placeholder="Nama Anda" />
+            </div>
+            <div>
+              <label for="email">Email / Kontak</label><br />
+              <input id="email" type="text" placeholder="Alamat email atau nomor kontak" />
+            </div>
+            <div>
+              <label for="subject">Subjek</label><br />
+              <input id="subject" type="text" placeholder="Topik kerja sama / kebutuhan" />
+            </div>
+            <div>
+              <label for="message">Pesan</label><br />
+              <textarea id="message" placeholder="Ceritakan kebutuhan, ide, atau rencana kerja sama..."></textarea>
+            </div>
+            <button type="button" class="btn-primary" style="margin-top: 0.2rem;">
+              Kirim Pesan (Demo)
+            </button>
+            <p class="contact-note">
+              *Form ini masih contoh statis. Hubungkan ke backend, email gateway, atau layanan form
+              (misalnya Formspree, Google Forms, dsb.) sesuai kebutuhan Anda.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; <span id="year"></span> CV.PATNER.ID • EXI-PATNER • ASTROS. Semua hak dilindungi.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <footer>
+    © <span id="year"></span> CV.PATNER.ID • EXI-PATNER • ASTROS. Semua hak dilindungi.<br>
+    <span style="opacity: 0.9;">Developed by Idan Agustian</span>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
